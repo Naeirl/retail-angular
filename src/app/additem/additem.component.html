@@ -1,0 +1,26 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="contactForm" novalidate>
+  <div formGroupName="item" novalidate>
+    <input formControlName="id"/>
+    <input formControlName="barcode"/>
+    <input formControlName="nameI"/>
+    <input formControlName="description"/>
+  </div>
+<!--  <select formControlName="text">-->
+<!--    <option *ngFor="let text of text" [value]="text"-->
+<!--    >{{text}}</option-->
+<!--    >-->
+<!--  </select>-->
+<!--  <select formControlName="requestType">-->
+<!--    <option *ngFor="let requestType of requestType" [value]="requestType"-->
+<!--    >{{requestType}}</option-->
+<!--    >-->
+<!--  </select>-->
+<!--  <input formControlName="text"/>-->
+  <button [disabled]="contactForm.pristine" type="submit">Save</button>
+  <button (click)="contactForm" [disabled]="contactForm.pristine" type="reset">
+
+    // not sure about resetting to (click)="contactForm"
+
+    Revert
+  </button>
+</form>

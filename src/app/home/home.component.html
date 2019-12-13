@@ -1,0 +1,20 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Barcode</th>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Amount</th>
+  </tr>
+  </thead>
+  <thead class="thead-light">
+  <tr *ngFor="let item of firstitemlist" id="customers">
+    <th scope="col">{{item.id}}</th>
+    <th scope="col">{{item.postId}}</th>
+    <th scope="col">{{item.email}}</th>
+    <th scope="col">{{item.name}}</th>
+    <th scope="col">{{item.body}}</th>
+  </tr>
+  </thead>
+</table>
