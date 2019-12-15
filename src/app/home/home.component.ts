@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
     this.configService.getItems().subscribe(
       data => {
         this.firstitemlist = data;
+        console.log('data from user : ' + data.toString());
       }
     );
   }
-
 }

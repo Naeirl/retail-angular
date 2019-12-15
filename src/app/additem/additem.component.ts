@@ -36,8 +36,8 @@ export class AdditemComponent implements OnInit {
 
   onSubmit() {
     this.configService.addNewItem(this.item).subscribe(
-      data => {
-        this.item = data;
+      json => {
+        this.item = new Additem(json);
       }
     );
   }

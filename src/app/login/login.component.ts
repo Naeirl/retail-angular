@@ -12,4 +12,14 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  login(username: string){
+    this.loginService.login<string>(username).subscribe((loginJson) =>{
+      let loginResponse = JSON.parse(loginJson);
+      if(loginResponse.userType == "admin"){
+        //navigate to administrator land
+      } else if (loginResponse.userType == "normalUser") {
+        //navigate to normal realm
+      }
+    });
+  }
 }

@@ -5,16 +5,26 @@ import {catchError} from 'rxjs/operators';
 import {Orderitem} from '../models/orderitem';
 import {Additem} from '../models/additem';
 
+
+
 @Injectable()
 export class ConfigService {
 
   // Restock item data
-  private restock: 'data/restockitem.json';
-
   // Adding item data
   private added: any;
+  private value: string;
 
   constructor(private httpclient: HttpClient) {
+    this.value = 'test';
+  }
+
+  someData()  {
+    const data = {
+      Value: 0,
+      Test: 'test',
+    };
+    return data;
   }
 
   // allstockeditems
@@ -23,11 +33,11 @@ export class ConfigService {
   }
 
   sentToRestock(warehouseitem: Orderitem): Observable<any> {
-    return this.httpclient.post('', this.restock).pipe(catchError(this.handleError));
+    return this.httpclient.post('', this.someData()).pipe(catchError(this.handleError));
   }
 
-  addNewItem(item: Additem): Observable<any> {
-    return this.httpclient.post('', this.added).pipe(catchError(this.handleError));
+  addNewItem(item: Additem): Observable<string> {
+    return this.httpclient.post<string>('', this.added).pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
